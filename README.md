@@ -7,8 +7,8 @@ Una herramienta táctica minimalista de alta precisión para **Overwatch (2026)*
 ### Roster Actualizado 2026 (54 Agentes)
 Incluye todos los agentes clásicos y la oleada completa de lanzamientos 2025–2026 con sus retratos e íconos oficiales:
 - **Tank (15):** D.Va, D.Mon, Domina, Doomfist, Hazard, Junker Queen, Mauga, Orisa, Ramattra, Reinhardt, Roadhog, Sigma, Winston, Wrecking Ball, Zarya.
-- **Damage (24):** Anran, Ashe, Bastion, Cassidy, Echo, Emre, Freja, Genji, Hanzo, Junkrat, Mei, Pharah, Reaper, Shion, Sierra, Sojourn, Soldier: 76, Sombra, Symmetra, Torbjörn, Tracer, Vendetta, Venture, Widowmaker.
-- **Support (15):** Ana, Baptiste, Brigitte, Doctrine, Illari, Jetpack Cat, Juno, Kiriko, Lifeweaver, Lúcio, Mercy, Mizuki, Moira, Wuyang, Zenyatta.
+- **Damage (23):** Anran, Ashe, Bastion, Cassidy, Echo, Emre, Freja, Genji, Hanzo, Junkrat, Mei, Pharah, Reaper, Shion, Sierra, Sojourn, Soldier: 76, Symmetra, Torbjörn, Tracer, Vendetta, Venture, Widowmaker.
+- **Support (16):** Ana, Baptiste, Brigitte, Doctrine, Illari, Jetpack Cat, Juno, Kiriko, Lifeweaver, Lúcio, Mercy, Mizuki, Moira, Sombra, Wuyang, Zenyatta.
 
 ### Características Principales
 1. **Agentes & Counters (`index.html`)**

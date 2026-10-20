@@ -1,21 +1,5 @@
 const FALLBACK_HERO_DATA = [
     {
-        "Hero Name": "D.Va",
-        "Key": "dva",
-        "Role": "Dive Tank",
-        "Base Role": "Tank",
-        "Subrole": "Initiator",
-        "Playstyle": "Dive",
-        "Tier": "S",
-        "Difficulty": 2,
-        "Portrait Img": "images/hero_portraits/d.va-portrait.png",
-        "Icon Img": "images/hero-icons/dva-icon.png",
-        "Counters": "Widowmaker, Pharah, Ashe, Ana, Jetpack Cat, Freja, Orisa",
-        "Weaknesses": "Zarya, Symmetra, Mei, Domina, Brigitte, D.Mon",
-        "Synergies": "Tracer, Genji, Kiriko, Juno, Lucio",
-        "Tip": "Usa Defense Matrix para comer habilidades clave (Biotic Grenade, proyectiles de Freja/Pharah) y presiona el high-ground."
-    },
-    {
         "Hero Name": "D.Mon",
         "Key": "dmon",
         "Role": "Brawl Tank",
@@ -30,6 +14,22 @@ const FALLBACK_HERO_DATA = [
         "Weaknesses": "Ana, Zenyatta, Bastion, Sojourn, Orisa",
         "Synergies": "Lucio, Kiriko, Mei, Reaper, Doctrine",
         "Tip": "Domina el frente cuerpo a cuerpo con tu escudo de energía y espada pesada MEKA; cuidado con el anti-heal de Ana y el Discord de Zenyatta."
+    },
+    {
+        "Hero Name": "D.Va",
+        "Key": "dva",
+        "Role": "Dive Tank",
+        "Base Role": "Tank",
+        "Subrole": "Initiator",
+        "Playstyle": "Dive",
+        "Tier": "S",
+        "Difficulty": 2,
+        "Portrait Img": "images/hero_portraits/d.va-portrait.png",
+        "Icon Img": "images/hero-icons/dva-icon.png",
+        "Counters": "Widowmaker, Pharah, Ashe, Ana, Jetpack Cat, Freja, Orisa",
+        "Weaknesses": "Zarya, Symmetra, Mei, Domina, Brigitte, D.Mon",
+        "Synergies": "Tracer, Genji, Kiriko, Juno, Lucio",
+        "Tip": "Usa Defense Matrix para comer habilidades clave (Biotic Grenade, proyectiles de Freja/Pharah) y presiona el high-ground."
     },
     {
         "Hero Name": "Domina",
@@ -512,22 +512,6 @@ const FALLBACK_HERO_DATA = [
         "Tip": "Toma ángulos laterales constantemente con Sprint; tu Biotic Field te permite sostener ese flanco sin depender de tus healers."
     },
     {
-        "Hero Name": "Sombra",
-        "Key": "sombra",
-        "Role": "Dive Damage",
-        "Base Role": "Damage",
-        "Subrole": "Flanker",
-        "Playstyle": "Dive",
-        "Tier": "B",
-        "Difficulty": 3,
-        "Portrait Img": "images/hero_portraits/sombra-portrait.png",
-        "Icon Img": "images/hero-icons/sombra-icon.png",
-        "Counters": "Doomfist, Wrecking Ball, Widowmaker, Domina, Zenyatta, Sigma",
-        "Weaknesses": "Cassidy, Kiriko, Brigitte, Torbjorn, Sierra, Hanzo",
-        "Synergies": "Winston, Doomfist, Wrecking Ball, Tracer, Kiriko",
-        "Tip": "Hackea objetivos que ya estén bajo fuego de tu equipo o corta habilidades clave de tanques móviles con Hack + Virus."
-    },
-    {
         "Hero Name": "Symmetra",
         "Key": "symmetra",
         "Role": "Brawl Damage",
@@ -832,6 +816,22 @@ const FALLBACK_HERO_DATA = [
         "Tip": "Prioriza Biotic Orb amarillo en espacios cerrados para curar en área a tu equipo de brawl y guarda Fade para esquivar ultimates."
     },
     {
+        "Hero Name": "Sombra",
+        "Key": "sombra",
+        "Role": "Dive Support",
+        "Base Role": "Support",
+        "Subrole": "Tactician",
+        "Playstyle": "Dive",
+        "Tier": "A",
+        "Difficulty": 3,
+        "Portrait Img": "images/hero_portraits/sombra-portrait.png",
+        "Icon Img": "images/hero-icons/sombra-icon.png",
+        "Counters": "Doomfist, Wrecking Ball, Widowmaker, Domina, Zenyatta, Sigma",
+        "Weaknesses": "Cassidy, Kiriko, Brigitte, Torbjorn, Sierra, Hanzo",
+        "Synergies": "Winston, Doomfist, Wrecking Ball, Tracer, Kiriko",
+        "Tip": "Usa White Hat / Hack táctico para curar y potenciar aliados o cortar habilidades clave de tanques enemigos en pleno dive."
+    },
+    {
         "Hero Name": "Wuyang",
         "Key": "wuyang",
         "Role": "Poke Support",
@@ -875,9 +875,9 @@ const metaCompositions = {
 
     // Tank-specific base counter templates (enhanced dynamically by DPS/Support scoring)
     brawlvdva: ["Zarya", "Symmetra", "Mei", "Brigitte", "Kiriko"],
-    brawlvdoom: ["Orisa", "Sombra", "Cassidy", "Brigitte", "Ana"],
+    brawlvdoom: ["Orisa", "Cassidy", "Venture", "Sombra", "Ana"],
     brawlvmonke: ["D.Mon", "Reaper", "Bastion", "Brigitte", "Ana"],
-    brawlvball: ["Roadhog", "Sombra", "Cassidy", "Brigitte", "Ana"],
+    brawlvball: ["Roadhog", "Cassidy", "Junkrat", "Sombra", "Ana"],
     brawlvhazard: ["Orisa", "Cassidy", "Sojourn", "Ana", "Brigitte"],
 
     pokevqueen: ["Orisa", "Bastion", "Ashe", "Kiriko", "Ana"],
@@ -888,7 +888,7 @@ const metaCompositions = {
     pokevzarya: ["Reinhardt", "Bastion", "Ashe", "Baptiste", "Lucio"],
     pokevdmon: ["Orisa", "Sojourn", "Bastion", "Ana", "Zenyatta"],
 
-    divevsig: ["Hazard", "Genji", "Sombra", "Lucio", "Kiriko"],
+    divevsig: ["Hazard", "Genji", "Tracer", "Sombra", "Kiriko"],
     divevorisa: ["Zarya", "Symmetra", "Sojourn", "Ana", "Zenyatta"],
     divevdomina: ["Winston", "Tracer", "Genji", "Juno", "Kiriko"]
 };

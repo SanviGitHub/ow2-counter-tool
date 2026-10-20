@@ -1,5 +1,53 @@
 [
   {
+    "key": "dmon",
+    "name": "D.Mon",
+    "role": "Brawl Tank",
+    "base_role": "Tank",
+    "subrole": "Stalwart",
+    "playstyle": "Brawl",
+    "tier": "S",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/dmon-portrait.png",
+    "grid_img": "images/hero-icons/dmon-icon.png",
+    "counters": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/hazard-portrait.png",
+      "images/hero_portraits/vendetta-portrait.png"
+    ],
+    "counter_names": [
+      "D.Va",
+      "Reinhardt",
+      "Winston",
+      "Hazard",
+      "Vendetta"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png",
+      "images/hero_portraits/orisa-portrait.png"
+    ],
+    "weakness_names": [
+      "Ana",
+      "Zenyatta",
+      "Bastion",
+      "Sojourn",
+      "Orisa"
+    ],
+    "synergies": [
+      "Lucio",
+      "Kiriko",
+      "Mei",
+      "Reaper",
+      "Doctrine"
+    ],
+    "tip": "Domina el frente cuerpo a cuerpo con tu escudo de energía y espada pesada MEKA; cuidado con el anti-heal de Ana y el Discord de Zenyatta."
+  },
+  {
     "key": "dva",
     "name": "D.Va",
     "role": "Dive Tank",
@@ -52,54 +100,6 @@
       "Lucio"
     ],
     "tip": "Usa Defense Matrix para comer habilidades clave (Biotic Grenade, proyectiles de Freja/Pharah) y presiona el high-ground."
-  },
-  {
-    "key": "dmon",
-    "name": "D.Mon",
-    "role": "Brawl Tank",
-    "base_role": "Tank",
-    "subrole": "Stalwart",
-    "playstyle": "Brawl",
-    "tier": "S",
-    "difficulty": 2,
-    "portrait_img": "images/hero_portraits/dmon-portrait.png",
-    "grid_img": "images/hero-icons/dmon-icon.png",
-    "counters": [
-      "images/hero_portraits/d.va-portrait.png",
-      "images/hero_portraits/reinhardt-portrait.png",
-      "images/hero_portraits/winston-portrait.png",
-      "images/hero_portraits/hazard-portrait.png",
-      "images/hero_portraits/vendetta-portrait.png"
-    ],
-    "counter_names": [
-      "D.Va",
-      "Reinhardt",
-      "Winston",
-      "Hazard",
-      "Vendetta"
-    ],
-    "weaknesses": [
-      "images/hero_portraits/ana-portrait.png",
-      "images/hero_portraits/zenyatta-portrait.png",
-      "images/hero_portraits/bastion-portrait.png",
-      "images/hero_portraits/sojourn-portrait.png",
-      "images/hero_portraits/orisa-portrait.png"
-    ],
-    "weakness_names": [
-      "Ana",
-      "Zenyatta",
-      "Bastion",
-      "Sojourn",
-      "Orisa"
-    ],
-    "synergies": [
-      "Lucio",
-      "Kiriko",
-      "Mei",
-      "Reaper",
-      "Doctrine"
-    ],
-    "tip": "Domina el frente cuerpo a cuerpo con tu escudo de energía y espada pesada MEKA; cuidado con el anti-heal de Ana y el Discord de Zenyatta."
   },
   {
     "key": "domina",
@@ -1616,58 +1616,6 @@
     "tip": "Toma ángulos laterales constantemente con Sprint; tu Biotic Field te permite sostener ese flanco sin depender de tus healers."
   },
   {
-    "key": "sombra",
-    "name": "Sombra",
-    "role": "Dive Damage",
-    "base_role": "Damage",
-    "subrole": "Flanker",
-    "playstyle": "Dive",
-    "tier": "B",
-    "difficulty": 3,
-    "portrait_img": "images/hero_portraits/sombra-portrait.png",
-    "grid_img": "images/hero-icons/sombra-icon.png",
-    "counters": [
-      "images/hero_portraits/doomfist-portrait.png",
-      "images/hero_portraits/wrecking-ball-portrait.png",
-      "images/hero_portraits/widowmaker-portrait.png",
-      "images/hero_portraits/domina-portrait.png",
-      "images/hero_portraits/zenyatta-portrait.png",
-      "images/hero_portraits/sigma-portrait.png"
-    ],
-    "counter_names": [
-      "Doomfist",
-      "Wrecking Ball",
-      "Widowmaker",
-      "Domina",
-      "Zenyatta",
-      "Sigma"
-    ],
-    "weaknesses": [
-      "images/hero_portraits/cassidy-portrait.png",
-      "images/hero_portraits/kiriko-portrait.png",
-      "images/hero_portraits/brigitte-portrait.png",
-      "images/hero_portraits/torbjorn-portrait.png",
-      "images/hero_portraits/sierra-portrait.png",
-      "images/hero_portraits/hanzo-portrait.png"
-    ],
-    "weakness_names": [
-      "Cassidy",
-      "Kiriko",
-      "Brigitte",
-      "Torbjorn",
-      "Sierra",
-      "Hanzo"
-    ],
-    "synergies": [
-      "Winston",
-      "Doomfist",
-      "Wrecking Ball",
-      "Tracer",
-      "Kiriko"
-    ],
-    "tip": "Hackea objetivos que ya estén bajo fuego de tu equipo o corta habilidades clave de tanques móviles con Hack + Virus."
-  },
-  {
     "key": "symmetra",
     "name": "Symmetra",
     "role": "Brawl Damage",
@@ -2608,6 +2556,58 @@
       "Mei"
     ],
     "tip": "Prioriza Biotic Orb amarillo en espacios cerrados para curar en área a tu equipo de brawl y guarda Fade para esquivar ultimates."
+  },
+  {
+    "key": "sombra",
+    "name": "Sombra",
+    "role": "Dive Support",
+    "base_role": "Support",
+    "subrole": "Tactician",
+    "playstyle": "Dive",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/sombra-portrait.png",
+    "grid_img": "images/hero-icons/sombra-icon.png",
+    "counters": [
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/domina-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/sigma-portrait.png"
+    ],
+    "counter_names": [
+      "Doomfist",
+      "Wrecking Ball",
+      "Widowmaker",
+      "Domina",
+      "Zenyatta",
+      "Sigma"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/kiriko-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png",
+      "images/hero_portraits/sierra-portrait.png",
+      "images/hero_portraits/hanzo-portrait.png"
+    ],
+    "weakness_names": [
+      "Cassidy",
+      "Kiriko",
+      "Brigitte",
+      "Torbjorn",
+      "Sierra",
+      "Hanzo"
+    ],
+    "synergies": [
+      "Winston",
+      "Doomfist",
+      "Wrecking Ball",
+      "Tracer",
+      "Kiriko"
+    ],
+    "tip": "Usa White Hat / Hack táctico para curar y potenciar aliados o cortar habilidades clave de tanques enemigos en pleno dive."
   },
   {
     "key": "wuyang",

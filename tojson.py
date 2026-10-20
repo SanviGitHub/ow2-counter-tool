@@ -488,17 +488,17 @@ heroes = [
     {
         "key": "sombra",
         "name": "Sombra",
-        "role": "Damage",
-        "subrole": "Flanker",
+        "role": "Support",
+        "subrole": "Tactician",
         "playstyle": "Dive",
-        "tier": "B",
+        "tier": "A",
         "difficulty": 3,
         "portrait_img": "images/hero_portraits/sombra-portrait.png",
         "grid_img": "images/hero-icons/sombra-icon.png",
         "counters": ["Doomfist", "Wrecking Ball", "Widowmaker", "Domina", "Zenyatta", "Sigma"],
         "weaknesses": ["Cassidy", "Kiriko", "Brigitte", "Torbjorn", "Sierra", "Hanzo"],
         "synergies": ["Winston", "Doomfist", "Wrecking Ball", "Tracer", "Kiriko"],
-        "tip": "Hackea objetivos que ya estén bajo fuego de tu equipo o corta habilidades clave de tanques móviles con Hack + Virus."
+        "tip": "Usa White Hat / Hack táctico para curar y potenciar aliados o cortar habilidades clave de tanques enemigos en pleno dive."
     },
     {
         "key": "symmetra",
