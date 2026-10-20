@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overwatch Team Builder 5v5 — 2026 Edition | Sanvy Inc.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="teamstyles.css">
+</head>
+<body>
+    <div class="ambient-glow" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="index.html" class="brand">
+                <img src="images/barlogo.png" alt="Overwatch Counter Tool" class="header-image">
+            </a>
+
+            <nav class="nav-segmented" aria-label="Navegación principal">
+                <a href="index.html" class="nav-pill">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                    Agentes &amp; Counters
+                </a>
+                <a href="team.html" class="nav-pill active">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Team Builder 5v5
+                </a>
+            </nav>
+
+            <div class="topbar-status">
+                <span class="status-dot"></span>
+                <span class="mono-label">v2026</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="team-workspace">
+        <!-- Left Panel: Enemy Team Composition Input -->
+        <section id="enemy-team" class="panel-card">
+            <div class="panel-header">
+                <div>
+                    <span class="mono-label accent-label">COMPOSICIÓN RIVAL</span>
+                    <h2>Enemy Team Composition</h2>
+                </div>
+                <div class="preset-actions">
+                    <button type="button" class="ghost-btn" data-preset="dive26">Meta Dive 26</button>
+                    <button type="button" class="ghost-btn" data-preset="brawl26">Meta Brawl 26</button>
+                    <button type="button" class="ghost-btn" data-preset="poke26">Meta Poke 26</button>
+                    <button type="button" class="ghost-btn" id="clear-team-btn">Limpiar</button>
+                </div>
+            </div>
+
+            <div class="slots-grid hero-select">
+                <div class="slot-card tank-slot" data-slot="1">
+                    <div class="slot-top">
+                        <span class="slot-role-tag tank-tag">TANK</span>
+                        <span class="slot-sub mono-label" id="slot1-sub">FRONT LINE</span>
+                    </div>
+                    <div class="slot-portrait-wrap">
+                        <img id="preview-enemy1" src="images/hero-icons/hazard-icon.png" alt="Tank Preview" class="slot-portrait">
+                    </div>
+                    <select id="enemy1">
+                        <option value="">Select Tank</option>
+                    </select>
+                </div>
+
+                <div class="slot-card damage-slot" data-slot="2">
+                    <div class="slot-top">
+                        <span class="slot-role-tag damage-tag">DPS 1</span>
+                        <span class="slot-sub mono-label" id="slot2-sub">STRIKE</span>
+                    </div>
+                    <div class="slot-portrait-wrap">
+                        <img id="preview-enemy2" src="images/hero-icons/freja-icon.png" alt="DPS 1 Preview" class="slot-portrait">
+                    </div>
+                    <select id="enemy2">
+                        <option value="">Select DPS</option>
+                    </select>
+                </div>
+
+                <div class="slot-card damage-slot" data-slot="3">
+                    <div class="slot-top">
+                        <span class="slot-role-tag damage-tag">DPS 2</span>
+                        <span class="slot-sub mono-label" id="slot3-sub">FLANK / FLEX</span>
+                    </div>
+                    <div class="slot-portrait-wrap">
+                        <img id="preview-enemy3" src="images/hero-icons/vendetta-icon.png" alt="DPS 2 Preview" class="slot-portrait">
+                    </div>
+                    <select id="enemy3">
+                        <option value="">Select DPS</option>
+                    </select>
+                </div>
+
+                <div class="slot-card support-slot" data-slot="4">
+                    <div class="slot-top">
+                        <span class="slot-role-tag support-tag">SUPPORT 1</span>
+                        <span class="slot-sub mono-label" id="slot4-sub">MAIN / TACTICIAN</span>
+                    </div>
+                    <div class="slot-portrait-wrap">
+                        <img id="preview-enemy4" src="images/hero-icons/juno-icon.png" alt="Support 1 Preview" class="slot-portrait">
+                    </div>
+                    <select id="enemy4">
+                        <option value="">Select Support</option>
+                    </select>
+                </div>
+
+                <div class="slot-card support-slot" data-slot="5">
+                    <div class="slot-top">
+                        <span class="slot-role-tag support-tag">SUPPORT 2</span>
+                        <span class="slot-sub mono-label" id="slot5-sub">FLEX / MEDIC</span>
+                    </div>
+                    <div class="slot-portrait-wrap">
+                        <img id="preview-enemy5" src="images/hero-icons/wuyang-icon.png" alt="Support 2 Preview" class="slot-portrait">
+                    </div>
+                    <select id="enemy5">
+                        <option value="">Select Support</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Enemy Playstyle Breakdown -->
+            <div class="playstyle-meter-box">
+                <div class="meter-header">
+                    <span class="mono-label">ARQUETIPO RIVAL DETECTADO</span>
+                    <span class="mono-label" id="enemy-archetype-label">DIVE DOMINANTE</span>
+                </div>
+                <div class="meter-bars">
+                    <div class="meter-item">
+                        <div class="meter-label-row">
+                            <span>Brawl</span>
+                            <span class="mono-label" id="count-brawl">0</span>
+                        </div>
+                        <div class="meter-track"><div class="meter-fill brawl-fill" id="bar-brawl" style="width: 0%"></div></div>
+                    </div>
+                    <div class="meter-item">
+                        <div class="meter-label-row">
+                            <span>Dive</span>
+                            <span class="mono-label" id="count-dive">0</span>
+                        </div>
+                        <div class="meter-track"><div class="meter-fill dive-fill" id="bar-dive" style="width: 0%"></div></div>
+                    </div>
+                    <div class="meter-item">
+                        <div class="meter-label-row">
+                            <span>Poke</span>
+                            <span class="mono-label" id="count-poke">0</span>
+                        </div>
+                        <div class="meter-track"><div class="meter-fill poke-fill" id="bar-poke" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="submit-button" class="primary-cta">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>Suggest Counter Team</span>
+            </button>
+        </section>
+
+        <!-- Right Panel: Suggested Team Composition Output -->
+        <section id="suggested-team" class="panel-card">
+            <div class="panel-header">
+                <div>
+                    <span class="mono-label positive-label">RESPUESTA ÓPTIMA RECOMENDADA</span>
+                    <h2>Suggested Team Composition</h2>
+                </div>
+                <div class="strategy-badge" id="strategy-badge">ANTI-DIVE / COUNTER</div>
+            </div>
+
+            <p class="strategy-summary" id="strategy-summary">
+                Selecciona los agentes enemigos o usa un preset competitivo para calcular la composición 5v5 con mayor ventaja de matchup y sinergia.
+            </p>
+
+            <div id="suggested-team-heroes" class="suggested-grid"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="footer-brand">OVERWATCH COUNTER TOOL <span class="mono-label">v2026</span></span>
+            </div>
+            <div class="footer-right">
+                <span>Hecho por <strong>Sanvy Inc.</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="teamscript.js"></script>
+</body>
+</html>

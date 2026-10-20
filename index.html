@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overwatch Counter Tool — 2026 Edition | Sanvy Inc.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="heroesstyles.css">
+</head>
+<body>
+    <div class="ambient-glow" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="index.html" class="brand">
+                <img src="images/barlogo.png" alt="Overwatch Counter Tool" class="header-image">
+            </a>
+
+            <nav class="nav-segmented" aria-label="Navegación principal">
+                <a href="index.html" class="nav-pill active">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+                    Agentes &amp; Counters
+                </a>
+                <a href="team.html" class="nav-pill">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    Team Builder 5v5
+                </a>
+            </nav>
+
+            <div class="topbar-status">
+                <span class="status-dot"></span>
+                <span class="mono-label">v2026</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Toolbar: Search + Playstyle / New 2026 Filters -->
+        <section class="controls-bar" aria-label="Filtros de agentes">
+            <div class="search-box">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="hero-search" placeholder="Buscar agente (ej. Hazard, Freja, Wuyang, Vendetta, Ana...)" autocomplete="off">
+                <kbd class="search-kbd" id="search-shortcut">/</kbd>
+            </div>
+
+            <div class="filter-group" id="playstyle-filters">
+                <button class="filter-chip active" data-filter="all">Todos <span class="chip-count" id="count-all">54</span></button>
+                <button class="filter-chip" data-filter="Dive">Dive</button>
+                <button class="filter-chip" data-filter="Brawl">Brawl</button>
+                <button class="filter-chip" data-filter="Poke">Poke</button>
+                <button class="filter-chip" data-filter="S">Tier S</button>
+            </div>
+        </section>
+
+        <main class="workspace">
+            <!-- Left: 3 Role Columns (Preserving original layout structure, modernized) -->
+            <div class="grid-container">
+                <div class="role-section" id="tank-section">
+                    <div class="role-header">
+                        <div class="role-title-wrap">
+                            <span class="role-badge tank-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg>
+                            </span>
+                            <h2>TANK</h2>
+                        </div>
+                        <span class="role-count mono-label" id="tank-count">15</span>
+                    </div>
+                    <div class="grid" id="tank-grid"></div>
+                </div>
+
+                <div class="role-section" id="damage-section">
+                    <div class="role-header">
+                        <div class="role-title-wrap">
+                            <span class="role-badge damage-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                            </span>
+                            <h2>DAMAGE</h2>
+                        </div>
+                        <span class="role-count mono-label" id="damage-count">24</span>
+                    </div>
+                    <div class="grid" id="damage-grid"></div>
+                </div>
+
+                <div class="role-section" id="support-section">
+                    <div class="role-header">
+                        <div class="role-title-wrap">
+                            <span class="role-badge support-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/></svg>
+                            </span>
+                            <h2>SUPPORT</h2>
+                        </div>
+                        <span class="role-count mono-label" id="support-count">15</span>
+                    </div>
+                    <div class="grid" id="support-grid"></div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Right: Tactical Inspector Dossier -->
+            <aside class="hero-details" id="hero-details">
+                <div class="dossier-card">
+                    <div class="dossier-top">
+                        <div class="portrait-frame">
+                            <img id="hero-img" src="images/hero_portraits/hazard-portrait.png" alt="Hero Image">
+                            <span class="tier-pill" id="hero-tier">S TIER</span>
+                        </div>
+                        <div class="dossier-identity">
+                            <div class="dossier-tags">
+                                <span class="tag-pill role-tag" id="hero-role">Dive Tank</span>
+                                <span class="tag-pill subrole-tag" id="hero-subrole">Initiator</span>
+                            </div>
+                            <h2 id="hero-name">Select a Hero</h2>
+                            <div class="difficulty-row">
+                                <span class="mono-label">DIFICULTAD</span>
+                                <div class="difficulty-bars" id="hero-difficulty">
+                                    <span class="bar active"></span>
+                                    <span class="bar active"></span>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tactical-tip-box" id="hero-tip-box">
+                        <span class="mono-label tip-label">ESTRATEGIA TÁCTICA 2026</span>
+                        <p id="hero-tip">Selecciona cualquier agente en la cuadrícula para inspeccionar sus counters directos, debilidades y sinergias de equipo.</p>
+                    </div>
+
+                    <div class="matchup-block">
+                        <div class="matchup-header effective-header">
+                            <span class="status-indicator positive"></span>
+                            <h3>FUERTE CONTRA (EFFECTIVE AGAINST)</h3>
+                        </div>
+                        <div class="counter matchup-grid" id="hero-counters"></div>
+                    </div>
+
+                    <div class="matchup-block">
+                        <div class="matchup-header weak-header">
+                            <span class="status-indicator negative"></span>
+                            <h3>COUNTERS DIRECTOS (COUNTERED BY)</h3>
+                        </div>
+                        <div class="weak matchup-grid" id="hero-weaknesses"></div>
+                    </div>
+
+                    <div class="matchup-block">
+                        <div class="matchup-header synergy-header">
+                            <span class="status-indicator neutral"></span>
+                            <h3>MEJORES SINERGIAS (SYNERGIES)</h3>
+                        </div>
+                        <div class="synergy matchup-grid" id="hero-synergies"></div>
+                    </div>
+
+                    <div class="dossier-actions">
+                        <a href="team.html" id="send-to-team-btn" class="action-btn">
+                            <span>Simular Counter en Team Builder</span>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="footer-brand">OVERWATCH COUNTER TOOL <span class="mono-label">v2026</span></span>
+            </div>
+            <div class="footer-right">
+                <span>Hecho por <strong>Sanvy Inc.</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="heroscript.js"></script>
+</body>
+</html>

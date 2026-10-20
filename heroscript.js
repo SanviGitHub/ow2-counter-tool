@@ -1,0 +1,2942 @@
+const FALLBACK_HEROES = [
+  {
+    "key": "dva",
+    "name": "D.Va",
+    "role": "Dive Tank",
+    "base_role": "Tank",
+    "subrole": "Initiator",
+    "playstyle": "Dive",
+    "tier": "S",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/d.va-portrait.png",
+    "grid_img": "images/hero-icons/dva-icon.png",
+    "counters": [
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/jetpack-cat-portrait.png",
+      "images/hero_portraits/freja-portrait.png",
+      "images/hero_portraits/orisa-portrait.png"
+    ],
+    "counter_names": [
+      "Widowmaker",
+      "Pharah",
+      "Ashe",
+      "Ana",
+      "Jetpack Cat",
+      "Freja",
+      "Orisa"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/domina-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/dmon-portrait.png"
+    ],
+    "weakness_names": [
+      "Zarya",
+      "Symmetra",
+      "Mei",
+      "Domina",
+      "Brigitte",
+      "D.Mon"
+    ],
+    "synergies": [
+      "Tracer",
+      "Genji",
+      "Kiriko",
+      "Juno",
+      "Lucio"
+    ],
+    "tip": "Usa Defense Matrix para comer habilidades clave (Biotic Grenade, proyectiles de Freja/Pharah) y presiona el high-ground."
+  },
+  {
+    "key": "dmon",
+    "name": "D.Mon",
+    "role": "Brawl Tank",
+    "base_role": "Tank",
+    "subrole": "Stalwart",
+    "playstyle": "Brawl",
+    "tier": "S",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/dmon-portrait.png",
+    "grid_img": "images/hero-icons/dmon-icon.png",
+    "counters": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/hazard-portrait.png",
+      "images/hero_portraits/vendetta-portrait.png"
+    ],
+    "counter_names": [
+      "D.Va",
+      "Reinhardt",
+      "Winston",
+      "Hazard",
+      "Vendetta"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png",
+      "images/hero_portraits/orisa-portrait.png"
+    ],
+    "weakness_names": [
+      "Ana",
+      "Zenyatta",
+      "Bastion",
+      "Sojourn",
+      "Orisa"
+    ],
+    "synergies": [
+      "Lucio",
+      "Kiriko",
+      "Mei",
+      "Reaper",
+      "Doctrine"
+    ],
+    "tip": "Domina el frente cuerpo a cuerpo con tu escudo de energía y espada pesada MEKA; cuidado con el anti-heal de Ana y el Discord de Zenyatta."
+  },
+  {
+    "key": "domina",
+    "name": "Domina",
+    "role": "Poke Tank",
+    "base_role": "Tank",
+    "subrole": "Stalwart",
+    "playstyle": "Poke",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/domina-portrait.png",
+    "grid_img": "images/hero-icons/domina-icon.png",
+    "counters": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/junkerqueen-portrait.png",
+      "images/hero_portraits/vendetta-portrait.png"
+    ],
+    "counter_names": [
+      "D.Va",
+      "Zarya",
+      "Mauga",
+      "Junker Queen",
+      "Vendetta"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/hazard-portrait.png",
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png"
+    ],
+    "weakness_names": [
+      "Winston",
+      "Doomfist",
+      "Hazard",
+      "Sombra",
+      "Symmetra"
+    ],
+    "synergies": [
+      "Symmetra",
+      "Ashe",
+      "Baptiste",
+      "Illari",
+      "Sigma"
+    ],
+    "tip": "Controla líneas de visión con Barrier Array y Photon Magnum. Usa Sonic Repulsors cuando intenten acortar distancia hacia tu equipo."
+  },
+  {
+    "key": "doomfist",
+    "name": "Doomfist",
+    "role": "Dive Tank",
+    "base_role": "Tank",
+    "subrole": "Initiator",
+    "playstyle": "Dive",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/doomfist-portrait.png",
+    "grid_img": "images/hero-icons/doomfist-icon.png",
+    "counters": [
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/domina-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/soldier76-portrait.png"
+    ],
+    "counter_names": [
+      "Sigma",
+      "Domina",
+      "Reinhardt",
+      "Zenyatta",
+      "Soldier: 76"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png"
+    ],
+    "weakness_names": [
+      "Sombra",
+      "Roadhog",
+      "Cassidy",
+      "Ana",
+      "Orisa",
+      "Brigitte"
+    ],
+    "synergies": [
+      "Tracer",
+      "Genji",
+      "Kiriko",
+      "Ana",
+      "Sombra"
+    ],
+    "tip": "Entra con Slam, asegura carga de Power Block o fuerza cooldowns enemigos y sal con Rocket Punch antes de recibir CC."
+  },
+  {
+    "key": "hazard",
+    "name": "Hazard",
+    "role": "Dive Tank",
+    "base_role": "Tank",
+    "subrole": "Initiator",
+    "playstyle": "Dive",
+    "tier": "S",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/hazard-portrait.png",
+    "grid_img": "images/hero-icons/hazard-icon.png",
+    "counters": [
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/domina-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/baptiste-portrait.png",
+      "images/hero_portraits/ana-portrait.png"
+    ],
+    "counter_names": [
+      "Sigma",
+      "Domina",
+      "Ashe",
+      "Widowmaker",
+      "Baptiste",
+      "Ana"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/dmon-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/cassidy-portrait.png"
+    ],
+    "weakness_names": [
+      "Orisa",
+      "Ana",
+      "Roadhog",
+      "D.Mon",
+      "Mauga",
+      "Cassidy"
+    ],
+    "synergies": [
+      "Genji",
+      "Tracer",
+      "Vendetta",
+      "Kiriko",
+      "Lucio"
+    ],
+    "tip": "Usa Jagged Wall para aislar objetivos sin movilidad y salta con Violent Leap para desarmar la backline enemiga."
+  },
+  {
+    "key": "junker-queen",
+    "name": "Junker Queen",
+    "role": "Brawl Tank",
+    "base_role": "Tank",
+    "subrole": "Stalwart",
+    "playstyle": "Brawl",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/junkerqueen-portrait.png",
+    "grid_img": "images/hero-icons/junker-queen-icon.png",
+    "counters": [
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png"
+    ],
+    "counter_names": [
+      "Winston",
+      "Doomfist",
+      "Roadhog",
+      "Ramattra",
+      "Wrecking Ball"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/kiriko-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/domina-portrait.png",
+      "images/hero_portraits/bastion-portrait.png"
+    ],
+    "weakness_names": [
+      "Kiriko",
+      "Orisa",
+      "Zarya",
+      "Ana",
+      "Domina",
+      "Bastion"
+    ],
+    "synergies": [
+      "Lucio",
+      "Brigitte",
+      "Reaper",
+      "Cassidy",
+      "Genji"
+    ],
+    "tip": "Fuerza el Suzu de Kiriko antes de usar Rampage. Mantén heridas activas en múltiples objetivos para maximizar tu autosanación."
+  },
+  {
+    "key": "mauga",
+    "name": "Mauga",
+    "role": "Brawl Tank",
+    "base_role": "Tank",
+    "subrole": "Bruiser",
+    "playstyle": "Brawl",
+    "tier": "B",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/mauga-portrait.png",
+    "grid_img": "images/hero-icons/mauga-icon.png",
+    "counters": [
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/hazard-portrait.png"
+    ],
+    "counter_names": [
+      "Roadhog",
+      "Winston",
+      "Wrecking Ball",
+      "Ramattra",
+      "Hazard"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png"
+    ],
+    "weakness_names": [
+      "Ana",
+      "Zenyatta",
+      "D.Va",
+      "Sigma",
+      "Zarya",
+      "Sojourn"
+    ],
+    "synergies": [
+      "Kiriko",
+      "Baptiste",
+      "Lucio",
+      "Bastion",
+      "Reaper"
+    ],
+    "tip": "Incendia con Gunny y remata con Cha-Cha para críticos garantizados. Nunca actives Cardiac Overdrive si Ana tiene Biotic Grenade lista."
+  },
+  {
+    "key": "orisa",
+    "name": "Orisa",
+    "role": "Brawl Tank",
+    "base_role": "Tank",
+    "subrole": "Bruiser",
+    "playstyle": "Brawl",
+    "tier": "A",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/orisa-portrait.png",
+    "grid_img": "images/hero-icons/orisa-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/junkerqueen-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/hazard-portrait.png",
+      "images/hero_portraits/dmon-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Doomfist",
+      "Junker Queen",
+      "Ramattra",
+      "Hazard",
+      "D.Mon"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/d.va-portrait.png"
+    ],
+    "weakness_names": [
+      "Zarya",
+      "Sigma",
+      "Symmetra",
+      "Zenyatta",
+      "Echo",
+      "D.Va"
+    ],
+    "synergies": [
+      "Bastion",
+      "Torbjorn",
+      "Baptiste",
+      "Ana",
+      "Illari"
+    ],
+    "tip": "Rota Fortify y Javelin Spin sin superponerlos. Usa Energy Javelin para cancelar habilidades canalizadas y desplazar tanques de brawl."
+  },
+  {
+    "key": "ramattra",
+    "name": "Ramattra",
+    "role": "Brawl Tank",
+    "base_role": "Tank",
+    "subrole": "Stalwart",
+    "playstyle": "Brawl",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/ramattra-portrait.png",
+    "grid_img": "images/hero-icons/ramattra-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/domina-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Sigma",
+      "Zarya",
+      "Brigitte",
+      "Domina"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png"
+    ],
+    "weakness_names": [
+      "Orisa",
+      "Ana",
+      "Roadhog",
+      "Mauga",
+      "Bastion",
+      "Zenyatta"
+    ],
+    "synergies": [
+      "Lucio",
+      "Ana",
+      "Mei",
+      "Symmetra",
+      "Kiriko"
+    ],
+    "tip": "Pokea en forma Ómnica y activa Nemesis Form para castigar escudos con Pummel. Usa Ravenous Vortex para frenar héroes aéreos o dive."
+  },
+  {
+    "key": "reinhardt",
+    "name": "Reinhardt",
+    "role": "Brawl Tank",
+    "base_role": "Tank",
+    "subrole": "Stalwart",
+    "playstyle": "Brawl",
+    "tier": "B",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/reinhardt-portrait.png",
+    "grid_img": "images/hero-icons/reinhardt-icon.png",
+    "counters": [
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/soldier76-portrait.png",
+      "images/hero_portraits/cassidy-portrait.png"
+    ],
+    "counter_names": [
+      "Zarya",
+      "Sigma",
+      "Winston",
+      "Soldier: 76",
+      "Cassidy"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/dmon-portrait.png",
+      "images/hero_portraits/mauga-portrait.png"
+    ],
+    "weakness_names": [
+      "Ramattra",
+      "Orisa",
+      "Bastion",
+      "Pharah",
+      "D.Mon",
+      "Mauga"
+    ],
+    "synergies": [
+      "Lucio",
+      "Ana",
+      "Mei",
+      "Symmetra",
+      "Baptiste"
+    ],
+    "tip": "Juega esquinas cerradas y usa el Speed Boost de Lúcio para acortar distancia sin gastar todo tu escudo en el camino."
+  },
+  {
+    "key": "roadhog",
+    "name": "Roadhog",
+    "role": "Poke Tank",
+    "base_role": "Tank",
+    "subrole": "Bruiser",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/roadhog-portrait.png",
+    "grid_img": "images/hero-icons/roadhog-icon.png",
+    "counters": [
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/hazard-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png"
+    ],
+    "counter_names": [
+      "Doomfist",
+      "Wrecking Ball",
+      "Winston",
+      "Hazard",
+      "Ramattra"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/reaper-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png"
+    ],
+    "weakness_names": [
+      "Ana",
+      "Mauga",
+      "Orisa",
+      "Zenyatta",
+      "Reaper",
+      "Sojourn"
+    ],
+    "synergies": [
+      "Kiriko",
+      "Lifeweaver",
+      "Junkrat",
+      "Ashe",
+      "Doctrine"
+    ],
+    "tip": "Coloca Pig Pen antes de lanzar Chain Hook para asegurar el combo letal. Pide siempre Kiriko para limpiar el anti-heal."
+  },
+  {
+    "key": "sigma",
+    "name": "Sigma",
+    "role": "Poke Tank",
+    "base_role": "Tank",
+    "subrole": "Stalwart",
+    "playstyle": "Poke",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/sigma-portrait.png",
+    "grid_img": "images/hero-icons/sigma-icon.png",
+    "counters": [
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png"
+    ],
+    "counter_names": [
+      "Bastion",
+      "Orisa",
+      "Mauga",
+      "Ashe",
+      "Widowmaker",
+      "Torbjorn"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png",
+      "images/hero_portraits/hazard-portrait.png",
+      "images/hero_portraits/zarya-portrait.png"
+    ],
+    "weakness_names": [
+      "Ramattra",
+      "Winston",
+      "Doomfist",
+      "Symmetra",
+      "Hazard",
+      "Zarya"
+    ],
+    "synergies": [
+      "Baptiste",
+      "Zenyatta",
+      "Ashe",
+      "Widowmaker",
+      "Freja"
+    ],
+    "tip": "Reposiciona tu Experimental Barrier constantemente para bloquear francotiradores y guarda Accretion para cortar ultimates."
+  },
+  {
+    "key": "winston",
+    "name": "Winston",
+    "role": "Dive Tank",
+    "base_role": "Tank",
+    "subrole": "Initiator",
+    "playstyle": "Dive",
+    "tier": "S",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/winston-portrait.png",
+    "grid_img": "images/hero-icons/winston-icon.png",
+    "counters": [
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/domina-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/freja-portrait.png"
+    ],
+    "counter_names": [
+      "Widowmaker",
+      "Sigma",
+      "Domina",
+      "Genji",
+      "Ana",
+      "Zenyatta",
+      "Freja"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/reaper-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/dmon-portrait.png",
+      "images/hero_portraits/junkerqueen-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png"
+    ],
+    "weakness_names": [
+      "Reaper",
+      "Bastion",
+      "D.Mon",
+      "Junker Queen",
+      "Mauga",
+      "Brigitte"
+    ],
+    "synergies": [
+      "Tracer",
+      "Genji",
+      "Ana",
+      "Kiriko",
+      "Sombra"
+    ],
+    "tip": "Usa tu Barrier Projector para aislar a los supports enemigos de su tanque cuando saltes a su backline."
+  },
+  {
+    "key": "wrecking-ball",
+    "name": "Wrecking Ball",
+    "role": "Dive Tank",
+    "base_role": "Tank",
+    "subrole": "Initiator",
+    "playstyle": "Dive",
+    "tier": "B",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/wrecking-ball-portrait.png",
+    "grid_img": "images/hero-icons/wrecking-ball-icon.png",
+    "counters": [
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/hanzo-portrait.png"
+    ],
+    "counter_names": [
+      "Widowmaker",
+      "Zenyatta",
+      "Ashe",
+      "Sigma",
+      "Hanzo"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/junkrat-portrait.png"
+    ],
+    "weakness_names": [
+      "Sombra",
+      "Cassidy",
+      "Roadhog",
+      "Brigitte",
+      "Mei",
+      "Junkrat"
+    ],
+    "synergies": [
+      "Tracer",
+      "Sombra",
+      "Zenyatta",
+      "Kiriko",
+      "Jetpack Cat"
+    ],
+    "tip": "Coordina Piledriver con tus flankers y usa Adaptive Shields cuando haya múltiples enemigos cerca para no regalar carga de ult."
+  },
+  {
+    "key": "zarya",
+    "name": "Zarya",
+    "role": "Brawl Tank",
+    "base_role": "Tank",
+    "subrole": "Bruiser",
+    "playstyle": "Brawl",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/zarya-portrait.png",
+    "grid_img": "images/hero-icons/zarya-icon.png",
+    "counters": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/junkerqueen-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/junkrat-portrait.png",
+      "images/hero_portraits/sigma-portrait.png"
+    ],
+    "counter_names": [
+      "D.Va",
+      "Orisa",
+      "Junker Queen",
+      "Genji",
+      "Junkrat",
+      "Sigma"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/domina-portrait.png",
+      "images/hero_portraits/pharah-portrait.png"
+    ],
+    "weakness_names": [
+      "Reinhardt",
+      "Bastion",
+      "Widowmaker",
+      "Ramattra",
+      "Domina",
+      "Pharah"
+    ],
+    "synergies": [
+      "Reaper",
+      "Genji",
+      "Vendetta",
+      "Ana",
+      "Lucio"
+    ],
+    "tip": "Usa tu primera burbuja para ganar energía y guarda siempre la segunda para limpiar estados negativos o salvar a un aliado en dive."
+  },
+  {
+    "key": "anran",
+    "name": "Anran",
+    "role": "Dive Damage",
+    "base_role": "Damage",
+    "subrole": "Flanker",
+    "playstyle": "Dive",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/anran-portrait.png",
+    "grid_img": "images/hero-icons/anran-icon.png",
+    "counters": [
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png"
+    ],
+    "counter_names": [
+      "Mei",
+      "Symmetra",
+      "Brigitte",
+      "Reinhardt",
+      "Zenyatta"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/wuyang-portrait.png"
+    ],
+    "weakness_names": [
+      "Cassidy",
+      "Ashe",
+      "Pharah",
+      "D.Va",
+      "Wuyang"
+    ],
+    "synergies": [
+      "Hazard",
+      "Winston",
+      "Kiriko",
+      "Wuyang",
+      "Zarya"
+    ],
+    "tip": "Aplica presión térmica en ángulos laterales y usa tu movilidad ígnea para forzar cooldowns defensivos de los supports."
+  },
+  {
+    "key": "ashe",
+    "name": "Ashe",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Sharpshooter",
+    "playstyle": "Poke",
+    "tier": "S",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/ashe-portrait.png",
+    "grid_img": "images/hero-icons/ashe-icon.png",
+    "counters": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/jetpack-cat-portrait.png",
+      "images/hero_portraits/freja-portrait.png",
+      "images/hero_portraits/reaper-portrait.png",
+      "images/hero_portraits/anran-portrait.png"
+    ],
+    "counter_names": [
+      "Pharah",
+      "Echo",
+      "Jetpack Cat",
+      "Freja",
+      "Reaper",
+      "Anran"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/hazard-portrait.png"
+    ],
+    "weakness_names": [
+      "Widowmaker",
+      "Winston",
+      "D.Va",
+      "Genji",
+      "Tracer",
+      "Hazard"
+    ],
+    "synergies": [
+      "Mercy",
+      "Sigma",
+      "Baptiste",
+      "Domina",
+      "Ana"
+    ],
+    "tip": "Lanza Dynamite por encima de los escudos enemigos para farmear B.O.B. rápido y guarda Coach Gun para escapar de tanques de dive."
+  },
+  {
+    "key": "bastion",
+    "name": "Bastion",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Specialist",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/bastion-portrait.png",
+    "grid_img": "images/hero-icons/bastion-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/dmon-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Winston",
+      "Zarya",
+      "Ramattra",
+      "Mauga",
+      "D.Mon"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png",
+      "images/hero_portraits/hanzo-portrait.png"
+    ],
+    "weakness_names": [
+      "Sigma",
+      "Genji",
+      "D.Va",
+      "Ana",
+      "Sojourn",
+      "Hanzo"
+    ],
+    "synergies": [
+      "Orisa",
+      "Baptiste",
+      "Mercy",
+      "Mauga",
+      "Sigma"
+    ],
+    "tip": "No gastes el modo Asalto hasta que el tanque enemigo haya comprometido su posición o escudo principal."
+  },
+  {
+    "key": "cassidy",
+    "name": "Cassidy",
+    "role": "Brawl Damage",
+    "base_role": "Damage",
+    "subrole": "Sharpshooter",
+    "playstyle": "Brawl",
+    "tier": "S",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/cassidy-portrait.png",
+    "grid_img": "images/hero-icons/cassidy-icon.png",
+    "counters": [
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/venture-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/jetpack-cat-portrait.png",
+      "images/hero_portraits/vendetta-portrait.png"
+    ],
+    "counter_names": [
+      "Tracer",
+      "Sombra",
+      "Venture",
+      "Doomfist",
+      "Pharah",
+      "Jetpack Cat",
+      "Vendetta"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png",
+      "images/hero_portraits/orisa-portrait.png"
+    ],
+    "weakness_names": [
+      "Ashe",
+      "Widowmaker",
+      "Sigma",
+      "Sojourn",
+      "Orisa"
+    ],
+    "synergies": [
+      "Junker Queen",
+      "Reinhardt",
+      "Brigitte",
+      "Ana",
+      "Lucio"
+    ],
+    "tip": "Juega cerca de tus supports como guardaespaldas anti-dive; tu Flashbang frena en seco a Tracer, Vendetta y Doomfist."
+  },
+  {
+    "key": "echo",
+    "name": "Echo",
+    "role": "Dive Damage",
+    "base_role": "Damage",
+    "subrole": "Recon",
+    "playstyle": "Dive",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/echo-portrait.png",
+    "grid_img": "images/hero-icons/echo-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/junkrat-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/venture-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Junkrat",
+      "Orisa",
+      "Venture",
+      "Mei",
+      "Ramattra"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/soldier76-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/baptiste-portrait.png"
+    ],
+    "weakness_names": [
+      "Ashe",
+      "Cassidy",
+      "Widowmaker",
+      "Soldier: 76",
+      "D.Va",
+      "Baptiste"
+    ],
+    "synergies": [
+      "Mercy",
+      "Winston",
+      "D.Va",
+      "Kiriko",
+      "Jetpack Cat"
+    ],
+    "tip": "Usa Sticky Bombs + Focusing Beam sobre objetivos por debajo del 50% de vida (incluyendo escudos) para derretirlos al instante."
+  },
+  {
+    "key": "emre",
+    "name": "Emre",
+    "role": "Brawl Damage",
+    "base_role": "Damage",
+    "subrole": "Specialist",
+    "playstyle": "Brawl",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/emre-portrait.png",
+    "grid_img": "images/hero-icons/emre-icon.png",
+    "counters": [
+      "images/hero_portraits/soldier76-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png",
+      "images/hero_portraits/juno-portrait.png",
+      "images/hero_portraits/lifeweaver-portrait.png"
+    ],
+    "counter_names": [
+      "Soldier: 76",
+      "Torbjorn",
+      "Symmetra",
+      "Juno",
+      "Lifeweaver"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/ashe-portrait.png"
+    ],
+    "weakness_names": [
+      "Widowmaker",
+      "Pharah",
+      "D.Va",
+      "Sigma",
+      "Ashe"
+    ],
+    "synergies": [
+      "Vendetta",
+      "Ramattra",
+      "Lucio",
+      "Baptiste",
+      "Doctrine"
+    ],
+    "tip": "Aprovecha tus mejoras cibernéticas para sostener fuego de supresión en media distancia y castigar rotaciones lentas."
+  },
+  {
+    "key": "freja",
+    "name": "Freja",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Recon",
+    "playstyle": "Poke",
+    "tier": "S",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/freja-portrait.png",
+    "grid_img": "images/hero-icons/freja-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/junkrat-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Junkrat",
+      "Mei",
+      "Bastion",
+      "Brigitte",
+      "Torbjorn"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/sombra-portrait.png"
+    ],
+    "weakness_names": [
+      "D.Va",
+      "Winston",
+      "Widowmaker",
+      "Ashe",
+      "Genji",
+      "Sombra"
+    ],
+    "synergies": [
+      "Sigma",
+      "Mercy",
+      "Zenyatta",
+      "Wuyang",
+      "Ana"
+    ],
+    "tip": "Usa Updraft y Quick Dash para suspenderte en el aire y clavar virotes explosivos con Take Aim sobre objetivos sin cobertura."
+  },
+  {
+    "key": "genji",
+    "name": "Genji",
+    "role": "Dive Damage",
+    "base_role": "Damage",
+    "subrole": "Flanker",
+    "playstyle": "Dive",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/genji-portrait.png",
+    "grid_img": "images/hero-icons/genji-icon.png",
+    "counters": [
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/hanzo-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/freja-portrait.png"
+    ],
+    "counter_names": [
+      "Widowmaker",
+      "Bastion",
+      "Hanzo",
+      "Ashe",
+      "Zenyatta",
+      "Freja"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/moira-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png"
+    ],
+    "weakness_names": [
+      "Winston",
+      "Zarya",
+      "Mei",
+      "Moira",
+      "Symmetra",
+      "Brigitte"
+    ],
+    "synergies": [
+      "Ana",
+      "Winston",
+      "Hazard",
+      "Kiriko",
+      "Zarya"
+    ],
+    "tip": "Guarda Swift Strike para confirmar eliminaciones (que resetean su cooldown) o para escapar tras forzar recursos enemigos."
+  },
+  {
+    "key": "hanzo",
+    "name": "Hanzo",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Sharpshooter",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/hanzo-portrait.png",
+    "grid_img": "images/hero-icons/hanzo-icon.png",
+    "counters": [
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png",
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/orisa-portrait.png"
+    ],
+    "counter_names": [
+      "Bastion",
+      "Torbjorn",
+      "Sombra",
+      "Tracer",
+      "Orisa"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/lucio-portrait.png"
+    ],
+    "weakness_names": [
+      "Winston",
+      "Genji",
+      "D.Va",
+      "Pharah",
+      "Echo",
+      "Lucio"
+    ],
+    "synergies": [
+      "Zarya",
+      "Sigma",
+      "Mercy",
+      "Zenyatta",
+      "Domina"
+    ],
+    "tip": "Coloca Sonic Arrow en esquinas clave para dar visión previa a tu equipo y usa Storm Arrows para romper escudos o castigar tanques."
+  },
+  {
+    "key": "junkrat",
+    "name": "Junkrat",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Specialist",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/junkrat-portrait.png",
+    "grid_img": "images/hero-icons/junkrat-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png",
+      "images/hero_portraits/dmon-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Wrecking Ball",
+      "Brigitte",
+      "Symmetra",
+      "D.Mon"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/freja-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png"
+    ],
+    "weakness_names": [
+      "Pharah",
+      "Echo",
+      "Freja",
+      "Ashe",
+      "Zarya",
+      "Widowmaker"
+    ],
+    "synergies": [
+      "Roadhog",
+      "Orisa",
+      "Baptiste",
+      "Mercy",
+      "Illari"
+    ],
+    "tip": "Controla chokes estrechos con spam indirecto y coloca Steel Trap en rutas de flanqueo contra tanques de dive."
+  },
+  {
+    "key": "mei",
+    "name": "Mei",
+    "role": "Brawl Damage",
+    "base_role": "Damage",
+    "subrole": "Specialist",
+    "playstyle": "Brawl",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/mei-portrait.png",
+    "grid_img": "images/hero-icons/mei-icon.png",
+    "counters": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png"
+    ],
+    "counter_names": [
+      "D.Va",
+      "Genji",
+      "Wrecking Ball",
+      "Zarya",
+      "Reinhardt"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/freja-portrait.png",
+      "images/hero_portraits/anran-portrait.png",
+      "images/hero_portraits/kiriko-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png"
+    ],
+    "weakness_names": [
+      "Pharah",
+      "Echo",
+      "Freja",
+      "Anran",
+      "Kiriko",
+      "Sojourn"
+    ],
+    "synergies": [
+      "Reinhardt",
+      "Ramattra",
+      "D.Mon",
+      "Lucio",
+      "Baptiste"
+    ],
+    "tip": "El uso principal de Ice Wall es dividir al tanque enemigo de sus supports en cuanto cruce un choke point."
+  },
+  {
+    "key": "pharah",
+    "name": "Pharah",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Recon",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/pharah-portrait.png",
+    "grid_img": "images/hero-icons/pharah-icon.png",
+    "counters": [
+      "images/hero_portraits/junkrat-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png",
+      "images/hero_portraits/venture-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png"
+    ],
+    "counter_names": [
+      "Junkrat",
+      "Mei",
+      "Reinhardt",
+      "Symmetra",
+      "Venture",
+      "Brigitte"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/soldier76-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/illari-portrait.png"
+    ],
+    "weakness_names": [
+      "Ashe",
+      "Cassidy",
+      "Widowmaker",
+      "Soldier: 76",
+      "D.Va",
+      "Illari"
+    ],
+    "synergies": [
+      "Mercy",
+      "Jetpack Cat",
+      "Zarya",
+      "Winston",
+      "Ana"
+    ],
+    "tip": "Juega usando techos y coberturas verticales con Jet Dash para sorprender a los hitscans desde ángulos inesperados."
+  },
+  {
+    "key": "reaper",
+    "name": "Reaper",
+    "role": "Brawl Damage",
+    "base_role": "Damage",
+    "subrole": "Flanker",
+    "playstyle": "Brawl",
+    "tier": "B",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/reaper-portrait.png",
+    "grid_img": "images/hero-icons/reaper-icon.png",
+    "counters": [
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png"
+    ],
+    "counter_names": [
+      "Winston",
+      "Roadhog",
+      "Mauga",
+      "Reinhardt",
+      "Wrecking Ball"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/ana-portrait.png"
+    ],
+    "weakness_names": [
+      "Pharah",
+      "Ashe",
+      "Echo",
+      "Widowmaker",
+      "Cassidy",
+      "Ana"
+    ],
+    "synergies": [
+      "Lucio",
+      "Zarya",
+      "Junker Queen",
+      "Kiriko",
+      "D.Mon"
+    ],
+    "tip": "Usa Shadow Step para posicionarte en flancos cortos y guarda siempre Wraith Form para salir vivo hacia tu equipo."
+  },
+  {
+    "key": "shion",
+    "name": "Shion",
+    "role": "Dive Damage",
+    "base_role": "Damage",
+    "subrole": "Flanker",
+    "playstyle": "Dive",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/shion-portrait.png",
+    "grid_img": "images/hero-icons/shion-icon.png",
+    "counters": [
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/hanzo-portrait.png"
+    ],
+    "counter_names": [
+      "Widowmaker",
+      "Ana",
+      "Zenyatta",
+      "Ashe",
+      "Hanzo"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/d.va-portrait.png"
+    ],
+    "weakness_names": [
+      "Cassidy",
+      "Torbjorn",
+      "Winston",
+      "Brigitte",
+      "D.Va"
+    ],
+    "synergies": [
+      "Hazard",
+      "Winston",
+      "Kiriko",
+      "Mizuki",
+      "Tracer"
+    ],
+    "tip": "Caza objetivos aislados en la retaguardia con combos rápidos de cuchilla cibernética y reposiciónate antes de que giren."
+  },
+  {
+    "key": "sierra",
+    "name": "Sierra",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Recon",
+    "playstyle": "Poke",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/sierra-portrait.png",
+    "grid_img": "images/hero-icons/sierra-icon.png",
+    "counters": [
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/shion-portrait.png"
+    ],
+    "counter_names": [
+      "Sombra",
+      "Tracer",
+      "Pharah",
+      "Echo",
+      "Shion"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/genji-portrait.png"
+    ],
+    "weakness_names": [
+      "D.Va",
+      "Winston",
+      "Widowmaker",
+      "Sigma",
+      "Genji"
+    ],
+    "synergies": [
+      "Sigma",
+      "Domina",
+      "Baptiste",
+      "Mercy",
+      "Ana"
+    ],
+    "tip": "Posiciona a tu dron Dorothy para revelar flanqueadores y usa tu rifle Helix para sostener presión constante a media-larga distancia."
+  },
+  {
+    "key": "sojourn",
+    "name": "Sojourn",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Sharpshooter",
+    "playstyle": "Poke",
+    "tier": "S",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/sojourn-portrait.png",
+    "grid_img": "images/hero-icons/sojourn-icon.png",
+    "counters": [
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/dmon-portrait.png"
+    ],
+    "counter_names": [
+      "Mauga",
+      "Roadhog",
+      "Bastion",
+      "Mei",
+      "Orisa",
+      "D.Mon"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png"
+    ],
+    "weakness_names": [
+      "D.Va",
+      "Winston",
+      "Tracer",
+      "Zarya",
+      "Widowmaker"
+    ],
+    "synergies": [
+      "Mercy",
+      "Kiriko",
+      "Winston",
+      "Sigma",
+      "Juno"
+    ],
+    "tip": "Carga energía de Railgun en el tanque enemigo y busca un headshot rápido sobre un DPS o Support de 250 HP."
+  },
+  {
+    "key": "soldier-76",
+    "name": "Soldier: 76",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Specialist",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/soldier76-portrait.png",
+    "grid_img": "images/hero-icons/soldier76-icon.png",
+    "counters": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/jetpack-cat-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png",
+      "images/hero_portraits/mercy-portrait.png"
+    ],
+    "counter_names": [
+      "Pharah",
+      "Echo",
+      "Jetpack Cat",
+      "Torbjorn",
+      "Mercy"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png"
+    ],
+    "weakness_names": [
+      "D.Va",
+      "Doomfist",
+      "Winston",
+      "Genji",
+      "Widowmaker"
+    ],
+    "synergies": [
+      "Ana",
+      "Baptiste",
+      "Sigma",
+      "Mercy",
+      "Illari"
+    ],
+    "tip": "Toma ángulos laterales constantemente con Sprint; tu Biotic Field te permite sostener ese flanco sin depender de tus healers."
+  },
+  {
+    "key": "sombra",
+    "name": "Sombra",
+    "role": "Dive Damage",
+    "base_role": "Damage",
+    "subrole": "Flanker",
+    "playstyle": "Dive",
+    "tier": "B",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/sombra-portrait.png",
+    "grid_img": "images/hero-icons/sombra-icon.png",
+    "counters": [
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/domina-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/sigma-portrait.png"
+    ],
+    "counter_names": [
+      "Doomfist",
+      "Wrecking Ball",
+      "Widowmaker",
+      "Domina",
+      "Zenyatta",
+      "Sigma"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/kiriko-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png",
+      "images/hero_portraits/sierra-portrait.png",
+      "images/hero_portraits/hanzo-portrait.png"
+    ],
+    "weakness_names": [
+      "Cassidy",
+      "Kiriko",
+      "Brigitte",
+      "Torbjorn",
+      "Sierra",
+      "Hanzo"
+    ],
+    "synergies": [
+      "Winston",
+      "Doomfist",
+      "Wrecking Ball",
+      "Tracer",
+      "Kiriko"
+    ],
+    "tip": "Hackea objetivos que ya estén bajo fuego de tu equipo o corta habilidades clave de tanques móviles con Hack + Virus."
+  },
+  {
+    "key": "symmetra",
+    "name": "Symmetra",
+    "role": "Brawl Damage",
+    "base_role": "Damage",
+    "subrole": "Specialist",
+    "playstyle": "Brawl",
+    "tier": "B",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/symmetra-portrait.png",
+    "grid_img": "images/hero-icons/symmetra-icon.png",
+    "counters": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/domina-portrait.png"
+    ],
+    "counter_names": [
+      "D.Va",
+      "Sigma",
+      "Orisa",
+      "Reinhardt",
+      "Genji",
+      "Domina"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/anran-portrait.png",
+      "images/hero_portraits/junkrat-portrait.png"
+    ],
+    "weakness_names": [
+      "Pharah",
+      "Echo",
+      "Widowmaker",
+      "Ashe",
+      "Anran",
+      "Junkrat"
+    ],
+    "synergies": [
+      "Reinhardt",
+      "Mauga",
+      "Lucio",
+      "Baptiste",
+      "Mei"
+    ],
+    "tip": "Usa Teleporter para rotar a todo tu equipo de brawl directamente al punto o al high-ground enemigo en segundos."
+  },
+  {
+    "key": "torbjorn",
+    "name": "Torbjorn",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Specialist",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/torbjorn-portrait.png",
+    "grid_img": "images/hero-icons/torbjorn-icon.png",
+    "counters": [
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/shion-portrait.png",
+      "images/hero_portraits/lucio-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png"
+    ],
+    "counter_names": [
+      "Tracer",
+      "Sombra",
+      "Genji",
+      "Shion",
+      "Lucio",
+      "Wrecking Ball"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/freja-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/junkrat-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/echo-portrait.png"
+    ],
+    "weakness_names": [
+      "Pharah",
+      "Freja",
+      "Widowmaker",
+      "Junkrat",
+      "Sigma",
+      "Echo"
+    ],
+    "synergies": [
+      "Orisa",
+      "Sigma",
+      "Baptiste",
+      "Brigitte",
+      "Illari"
+    ],
+    "tip": "Coloca tu torreta donde cubra a tus supports contra flankers, no en primera línea donde los tanques la rompan gratis."
+  },
+  {
+    "key": "tracer",
+    "name": "Tracer",
+    "role": "Dive Damage",
+    "base_role": "Damage",
+    "subrole": "Flanker",
+    "playstyle": "Dive",
+    "tier": "S",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/tracer-portrait.png",
+    "grid_img": "images/hero-icons/tracer-icon.png",
+    "counters": [
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png"
+    ],
+    "counter_names": [
+      "Zenyatta",
+      "Ana",
+      "Widowmaker",
+      "Ashe",
+      "Bastion",
+      "Sojourn"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png",
+      "images/hero_portraits/kiriko-portrait.png",
+      "images/hero_portraits/sierra-portrait.png"
+    ],
+    "weakness_names": [
+      "Cassidy",
+      "Torbjorn",
+      "Brigitte",
+      "Kiriko",
+      "Sierra"
+    ],
+    "synergies": [
+      "Winston",
+      "D.Va",
+      "Hazard",
+      "Kiriko",
+      "Lucio"
+    ],
+    "tip": "Sincroniza tu entrada con el salto de tu tanque de dive y guarda siempre Recall para cuando te fuercen vida crítica o cooldowns."
+  },
+  {
+    "key": "vendetta",
+    "name": "Vendetta",
+    "role": "Brawl Damage",
+    "base_role": "Damage",
+    "subrole": "Flanker",
+    "playstyle": "Brawl",
+    "tier": "S",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/vendetta-portrait.png",
+    "grid_img": "images/hero-icons/vendetta-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Sigma",
+      "Zenyatta",
+      "Ana",
+      "Mei",
+      "Symmetra"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/dmon-portrait.png",
+      "images/hero_portraits/domina-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/ashe-portrait.png"
+    ],
+    "weakness_names": [
+      "Cassidy",
+      "Pharah",
+      "D.Mon",
+      "Domina",
+      "Echo",
+      "Ashe"
+    ],
+    "synergies": [
+      "Zarya",
+      "Junker Queen",
+      "Lucio",
+      "Kiriko",
+      "Emre"
+    ],
+    "tip": "Domina combates cerrados con el mandoble Palatine Fang; usa el impulso de Lúcio o burbuja de Zarya para ejecutar objetivos."
+  },
+  {
+    "key": "venture",
+    "name": "Venture",
+    "role": "Dive Damage",
+    "base_role": "Damage",
+    "subrole": "Flanker",
+    "playstyle": "Dive",
+    "tier": "B",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/venture-portrait.png",
+    "grid_img": "images/hero-icons/venture-icon.png",
+    "counters": [
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/hanzo-portrait.png"
+    ],
+    "counter_names": [
+      "Widowmaker",
+      "Ana",
+      "Zenyatta",
+      "Sigma",
+      "Hanzo"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/brigitte-portrait.png"
+    ],
+    "weakness_names": [
+      "Cassidy",
+      "Pharah",
+      "Echo",
+      "D.Va",
+      "Brigitte"
+    ],
+    "synergies": [
+      "Hazard",
+      "Doomfist",
+      "Kiriko",
+      "Juno",
+      "Lucio"
+    ],
+    "tip": "Entra bajo tierra con Burrow para ser invulnerable y usa Drill Dash para empujar objetivos fuera de posición o de vuelta a tu equipo."
+  },
+  {
+    "key": "widowmaker",
+    "name": "Widowmaker",
+    "role": "Poke Damage",
+    "base_role": "Damage",
+    "subrole": "Sharpshooter",
+    "playstyle": "Poke",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/widowmaker-portrait.png",
+    "grid_img": "images/hero-icons/widowmaker-icon.png",
+    "counters": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/emre-portrait.png"
+    ],
+    "counter_names": [
+      "Pharah",
+      "Ashe",
+      "Echo",
+      "Torbjorn",
+      "Zarya",
+      "Emre"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/shion-portrait.png",
+      "images/hero_portraits/hazard-portrait.png"
+    ],
+    "weakness_names": [
+      "Winston",
+      "D.Va",
+      "Sombra",
+      "Genji",
+      "Tracer",
+      "Shion",
+      "Hazard"
+    ],
+    "synergies": [
+      "Sigma",
+      "Mercy",
+      "Brigitte",
+      "Baptiste",
+      "Domina"
+    ],
+    "tip": "Cambia de ángulo después de cada 2-3 disparos para que los flankers enemigos no puedan predecir tu posición."
+  },
+  {
+    "key": "ana",
+    "name": "Ana",
+    "role": "Poke Support",
+    "base_role": "Support",
+    "subrole": "Tactician",
+    "playstyle": "Poke",
+    "tier": "S",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/ana-portrait.png",
+    "grid_img": "images/hero-icons/ana-icon.png",
+    "counters": [
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/hazard-portrait.png",
+      "images/hero_portraits/dmon-portrait.png",
+      "images/hero_portraits/bastion-portrait.png"
+    ],
+    "counter_names": [
+      "Roadhog",
+      "Mauga",
+      "Doomfist",
+      "Hazard",
+      "D.Mon",
+      "Bastion"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/kiriko-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png"
+    ],
+    "weakness_names": [
+      "Kiriko",
+      "D.Va",
+      "Winston",
+      "Tracer",
+      "Sombra",
+      "Widowmaker"
+    ],
+    "synergies": [
+      "Genji",
+      "Winston",
+      "Reinhardt",
+      "Brigitte",
+      "Soldier: 76"
+    ],
+    "tip": "Un Biotic Grenade ofensivo sobre el tanque enemigo gana peleas enteras; guarda Sleep Dart si tienen flankers o tanques de dive."
+  },
+  {
+    "key": "baptiste",
+    "name": "Baptiste",
+    "role": "Brawl Support",
+    "base_role": "Support",
+    "subrole": "Tactician",
+    "playstyle": "Brawl",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/baptiste-portrait.png",
+    "grid_img": "images/hero-icons/baptiste-icon.png",
+    "counters": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/venture-portrait.png",
+      "images/hero_portraits/junkrat-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png"
+    ],
+    "counter_names": [
+      "Pharah",
+      "Echo",
+      "Venture",
+      "Junkrat",
+      "Reinhardt"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/hazard-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/hanzo-portrait.png"
+    ],
+    "weakness_names": [
+      "D.Va",
+      "Hazard",
+      "Genji",
+      "Sombra",
+      "Widowmaker",
+      "Hanzo"
+    ],
+    "synergies": [
+      "Sigma",
+      "Orisa",
+      "Bastion",
+      "Reinhardt",
+      "Illari"
+    ],
+    "tip": "Alterna disparo primario y granada curativa sin perder ritmo, y coloca Immortality Field detrás de una esquina para que no lo rompan."
+  },
+  {
+    "key": "brigitte",
+    "name": "Brigitte",
+    "role": "Dive Support",
+    "base_role": "Support",
+    "subrole": "Survivor",
+    "playstyle": "Dive",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/brigitte-portrait.png",
+    "grid_img": "images/hero-icons/brigitte-icon.png",
+    "counters": [
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/wrecking-ball-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png"
+    ],
+    "counter_names": [
+      "Tracer",
+      "Sombra",
+      "Genji",
+      "D.Va",
+      "Winston",
+      "Wrecking Ball",
+      "Doomfist"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/junkrat-portrait.png",
+      "images/hero_portraits/bastion-portrait.png",
+      "images/hero_portraits/freja-portrait.png",
+      "images/hero_portraits/anran-portrait.png"
+    ],
+    "weakness_names": [
+      "Ramattra",
+      "Pharah",
+      "Junkrat",
+      "Bastion",
+      "Freja",
+      "Anran"
+    ],
+    "synergies": [
+      "Ana",
+      "Juno",
+      "Junker Queen",
+      "D.Va",
+      "Winston"
+    ],
+    "tip": "Tu trabajo número uno es proteger a tu otro support (Ana/Juno). Usa Whip Shot a distancia para mantener Inspire activo."
+  },
+  {
+    "key": "doctrine",
+    "name": "Doctrine",
+    "role": "Brawl Support",
+    "base_role": "Support",
+    "subrole": "Survivor",
+    "playstyle": "Brawl",
+    "tier": "A",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/doctrine-portrait.png",
+    "grid_img": "images/hero-icons/doctrine-icon.png",
+    "counters": [
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/junkerqueen-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/venture-portrait.png"
+    ],
+    "counter_names": [
+      "Winston",
+      "Junker Queen",
+      "Genji",
+      "Venture"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png",
+      "images/hero_portraits/d.va-portrait.png"
+    ],
+    "weakness_names": [
+      "Ana",
+      "Widowmaker",
+      "Ashe",
+      "Sojourn",
+      "D.Va"
+    ],
+    "synergies": [
+      "D.Mon",
+      "Roadhog",
+      "Emre",
+      "Vendetta",
+      "Lucio"
+    ],
+    "tip": "Gestiona tus Drones Revitalizantes y el Cetro Eterno para sostener tanques de brawl en peleas prolongadas."
+  },
+  {
+    "key": "illari",
+    "name": "Illari",
+    "role": "Poke Support",
+    "base_role": "Support",
+    "subrole": "Survivor",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/illari-portrait.png",
+    "grid_img": "images/hero-icons/illari-icon.png",
+    "counters": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/mercy-portrait.png",
+      "images/hero_portraits/jetpack-cat-portrait.png",
+      "images/hero_portraits/tracer-portrait.png"
+    ],
+    "counter_names": [
+      "Pharah",
+      "Echo",
+      "Mercy",
+      "Jetpack Cat",
+      "Tracer"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/hazard-portrait.png",
+      "images/hero_portraits/sombra-portrait.png"
+    ],
+    "weakness_names": [
+      "D.Va",
+      "Winston",
+      "Doomfist",
+      "Hazard",
+      "Sombra"
+    ],
+    "synergies": [
+      "Sigma",
+      "Orisa",
+      "Baptiste",
+      "Ashe",
+      "Sojourn"
+    ],
+    "tip": "Esconde tu Healing Pylon en zonas altas fuera de visión enemiga y espera siempre a que tu rifle cargue al máximo antes de disparar."
+  },
+  {
+    "key": "jetpack-cat",
+    "name": "Jetpack Cat",
+    "role": "Dive Support",
+    "base_role": "Support",
+    "subrole": "Tactician",
+    "playstyle": "Dive",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/jetpack-cat-portrait.png",
+    "grid_img": "images/hero-icons/jetpack-cat-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/junkrat-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/venture-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Junkrat",
+      "Mei",
+      "Venture",
+      "Ramattra"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/soldier76-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/illari-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png"
+    ],
+    "weakness_names": [
+      "Cassidy",
+      "Ashe",
+      "Soldier: 76",
+      "D.Va",
+      "Illari",
+      "Widowmaker"
+    ],
+    "synergies": [
+      "Winston",
+      "Pharah",
+      "Echo",
+      "Wrecking Ball",
+      "Tracer"
+    ],
+    "tip": "Aprovecha tu vuelo vertical constante para asistir a composiciones de dive desde ángulos donde los tanques terrestres no llegan."
+  },
+  {
+    "key": "juno",
+    "name": "Juno",
+    "role": "Dive Support",
+    "base_role": "Support",
+    "subrole": "Survivor",
+    "playstyle": "Dive",
+    "tier": "S",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/juno-portrait.png",
+    "grid_img": "images/hero-icons/juno-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/echo-portrait.png",
+      "images/hero_portraits/orisa-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Ramattra",
+      "Pharah",
+      "Echo",
+      "Orisa"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/emre-portrait.png"
+    ],
+    "weakness_names": [
+      "Sombra",
+      "Tracer",
+      "D.Va",
+      "Winston",
+      "Ashe",
+      "Emre"
+    ],
+    "synergies": [
+      "Brigitte",
+      "D.Va",
+      "Hazard",
+      "Junker Queen",
+      "Sojourn"
+    ],
+    "tip": "Usa Hyper Ring para acelerar la entrada o salida de tu equipo y lanza Pulsar Torpedoes cuando tengas visión de múltiples aliados y enemigos."
+  },
+  {
+    "key": "kiriko",
+    "name": "Kiriko",
+    "role": "Dive Support",
+    "base_role": "Support",
+    "subrole": "Medic",
+    "playstyle": "Dive",
+    "tier": "S",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/kiriko-portrait.png",
+    "grid_img": "images/hero-icons/kiriko-icon.png",
+    "counters": [
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/junkerqueen-portrait.png",
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/roadhog-portrait.png"
+    ],
+    "counter_names": [
+      "Ana",
+      "Junker Queen",
+      "Sombra",
+      "Ashe",
+      "Mei",
+      "Roadhog"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png",
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/zarya-portrait.png"
+    ],
+    "weakness_names": [
+      "Winston",
+      "Sojourn",
+      "Pharah",
+      "Cassidy",
+      "Zarya"
+    ],
+    "synergies": [
+      "Roadhog",
+      "Mauga",
+      "Hazard",
+      "D.Va",
+      "Genji",
+      "Tracer"
+    ],
+    "tip": "Guarda Protection Suzu específicamente para limpiar el anti-heal de Ana, el Rampage de Junker Queen o ultimates letales."
+  },
+  {
+    "key": "lifeweaver",
+    "name": "Lifeweaver",
+    "role": "Poke Support",
+    "base_role": "Support",
+    "subrole": "Medic",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/lifeweaver-portrait.png",
+    "grid_img": "images/hero-icons/lifeweaver-icon.png",
+    "counters": [
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/sigma-portrait.png",
+      "images/hero_portraits/mauga-portrait.png"
+    ],
+    "counter_names": [
+      "Zarya",
+      "Orisa",
+      "Reinhardt",
+      "Sigma",
+      "Mauga"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/emre-portrait.png"
+    ],
+    "weakness_names": [
+      "Sombra",
+      "Winston",
+      "D.Va",
+      "Widowmaker",
+      "Emre"
+    ],
+    "synergies": [
+      "Roadhog",
+      "Ana",
+      "Ashe",
+      "Bastion",
+      "Pharah"
+    ],
+    "tip": "Usa Petal Platform para levantar aliados atrapados en Graviton Surge o Orisa Terra Surge, y Life Grip para salvar tanques sin recursos."
+  },
+  {
+    "key": "lucio",
+    "name": "Lucio",
+    "role": "Brawl Support",
+    "base_role": "Support",
+    "subrole": "Tactician",
+    "playstyle": "Brawl",
+    "tier": "S",
+    "difficulty": 3,
+    "portrait_img": "images/hero_portraits/lucio-portrait.png",
+    "grid_img": "images/hero-icons/lucio-icon.png",
+    "counters": [
+      "images/hero_portraits/reinhardt-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/zenyatta-portrait.png",
+      "images/hero_portraits/hanzo-portrait.png",
+      "images/hero_portraits/sigma-portrait.png"
+    ],
+    "counter_names": [
+      "Reinhardt",
+      "Widowmaker",
+      "Zenyatta",
+      "Hanzo",
+      "Sigma"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/torbjorn-portrait.png",
+      "images/hero_portraits/moira-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png",
+      "images/hero_portraits/pharah-portrait.png"
+    ],
+    "weakness_names": [
+      "Cassidy",
+      "Torbjorn",
+      "Moira",
+      "Symmetra",
+      "Pharah"
+    ],
+    "synergies": [
+      "Reinhardt",
+      "Ramattra",
+      "Junker Queen",
+      "D.Mon",
+      "Vendetta",
+      "Kiriko"
+    ],
+    "tip": "El valor principal de Lúcio es el Speed Boost: úsalo con Amp It Up para que tu composición de brawl atropelle al enemigo."
+  },
+  {
+    "key": "mercy",
+    "name": "Mercy",
+    "role": "Poke Support",
+    "base_role": "Support",
+    "subrole": "Medic",
+    "playstyle": "Poke",
+    "tier": "B",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/mercy-portrait.png",
+    "grid_img": "images/hero-icons/mercy-icon.png",
+    "counters": [
+      "images/hero_portraits/junkrat-portrait.png",
+      "images/hero_portraits/mei-portrait.png",
+      "images/hero_portraits/symmetra-portrait.png"
+    ],
+    "counter_names": [
+      "Junkrat",
+      "Mei",
+      "Symmetra"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/cassidy-portrait.png",
+      "images/hero_portraits/soldier76-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/winston-portrait.png"
+    ],
+    "weakness_names": [
+      "Ashe",
+      "Cassidy",
+      "Soldier: 76",
+      "Widowmaker",
+      "D.Va",
+      "Winston"
+    ],
+    "synergies": [
+      "Ashe",
+      "Pharah",
+      "Echo",
+      "Sojourn",
+      "Freja"
+    ],
+    "tip": "Prioriza el rayo azul (Damage Boost) en tu DPS hitscan o aéreo (Ashe, Sojourn, Freja, Pharah) y nunca hagas Resurrect sin cobertura."
+  },
+  {
+    "key": "mizuki",
+    "name": "Mizuki",
+    "role": "Dive Support",
+    "base_role": "Support",
+    "subrole": "Survivor",
+    "playstyle": "Dive",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/mizuki-portrait.png",
+    "grid_img": "images/hero-icons/mizuki-icon.png",
+    "counters": [
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/venture-portrait.png",
+      "images/hero_portraits/sombra-portrait.png"
+    ],
+    "counter_names": [
+      "Genji",
+      "Tracer",
+      "Venture",
+      "Sombra"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/pharah-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/zarya-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png"
+    ],
+    "weakness_names": [
+      "Pharah",
+      "Widowmaker",
+      "Zarya",
+      "Ramattra"
+    ],
+    "synergies": [
+      "Hazard",
+      "Shion",
+      "Genji",
+      "Kiriko",
+      "Winston"
+    ],
+    "tip": "Acompaña a tus flankers con tu agilidad y escudos de niebla para sostener escaramuzas rápidas en líneas enemigas."
+  },
+  {
+    "key": "moira",
+    "name": "Moira",
+    "role": "Brawl Support",
+    "base_role": "Support",
+    "subrole": "Medic",
+    "playstyle": "Brawl",
+    "tier": "B",
+    "difficulty": 1,
+    "portrait_img": "images/hero_portraits/moira-portrait.png",
+    "grid_img": "images/hero-icons/moira-icon.png",
+    "counters": [
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/lucio-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/sombra-portrait.png"
+    ],
+    "counter_names": [
+      "Genji",
+      "Lucio",
+      "Tracer",
+      "Sombra"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/ana-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/ashe-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/sojourn-portrait.png"
+    ],
+    "weakness_names": [
+      "Ana",
+      "D.Va",
+      "Ashe",
+      "Widowmaker",
+      "Sojourn"
+    ],
+    "synergies": [
+      "Reinhardt",
+      "Ramattra",
+      "Lucio",
+      "Reaper",
+      "Mei"
+    ],
+    "tip": "Prioriza Biotic Orb amarillo en espacios cerrados para curar en área a tu equipo de brawl y guarda Fade para esquivar ultimates."
+  },
+  {
+    "key": "wuyang",
+    "name": "Wuyang",
+    "role": "Poke Support",
+    "base_role": "Support",
+    "subrole": "Survivor",
+    "playstyle": "Poke",
+    "tier": "S",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/wuyang-portrait.png",
+    "grid_img": "images/hero-icons/wuyang-icon.png",
+    "counters": [
+      "images/hero_portraits/anran-portrait.png",
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/junkerqueen-portrait.png",
+      "images/hero_portraits/reaper-portrait.png",
+      "images/hero_portraits/vendetta-portrait.png"
+    ],
+    "counter_names": [
+      "Anran",
+      "Mauga",
+      "Junker Queen",
+      "Reaper",
+      "Vendetta"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/d.va-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png",
+      "images/hero_portraits/sombra-portrait.png"
+    ],
+    "weakness_names": [
+      "Winston",
+      "D.Va",
+      "Tracer",
+      "Widowmaker",
+      "Sombra"
+    ],
+    "synergies": [
+      "Sigma",
+      "Freja",
+      "Ashe",
+      "Ana",
+      "Domina"
+    ],
+    "tip": "Usa tus corrientes de agua para reposicionar aliados, apagar presión enemiga de corto alcance y controlar zonas clave."
+  },
+  {
+    "key": "zenyatta",
+    "name": "Zenyatta",
+    "role": "Poke Support",
+    "base_role": "Support",
+    "subrole": "Tactician",
+    "playstyle": "Poke",
+    "tier": "A",
+    "difficulty": 2,
+    "portrait_img": "images/hero_portraits/zenyatta-portrait.png",
+    "grid_img": "images/hero-icons/zenyatta-icon.png",
+    "counters": [
+      "images/hero_portraits/mauga-portrait.png",
+      "images/hero_portraits/orisa-portrait.png",
+      "images/hero_portraits/roadhog-portrait.png",
+      "images/hero_portraits/dmon-portrait.png",
+      "images/hero_portraits/ramattra-portrait.png",
+      "images/hero_portraits/reinhardt-portrait.png"
+    ],
+    "counter_names": [
+      "Mauga",
+      "Orisa",
+      "Roadhog",
+      "D.Mon",
+      "Ramattra",
+      "Reinhardt"
+    ],
+    "weaknesses": [
+      "images/hero_portraits/sombra-portrait.png",
+      "images/hero_portraits/tracer-portrait.png",
+      "images/hero_portraits/winston-portrait.png",
+      "images/hero_portraits/genji-portrait.png",
+      "images/hero_portraits/doomfist-portrait.png",
+      "images/hero_portraits/widowmaker-portrait.png"
+    ],
+    "weakness_names": [
+      "Sombra",
+      "Tracer",
+      "Winston",
+      "Genji",
+      "Doomfist",
+      "Widowmaker"
+    ],
+    "synergies": [
+      "Sigma",
+      "Brigitte",
+      "Baptiste",
+      "Wrecking Ball",
+      "Freja"
+    ],
+    "tip": "Mantén Orb of Discord en el tanque enemigo cuando intente avanzar; obliga a retroceder a cualquier tanque sin escudo."
+  }
+];
+
+let allHeroes = [];
+let selectedHero = null;
+let currentFilter = 'all';
+let searchQuery = '';
+
+const NEW_2026_KEYS = new Set([
+    'hazard', 'freja', 'wuyang', 'domina', 'emre', 'anran',
+    'jetpack-cat', 'mizuki', 'vendetta', 'sierra', 'dmon', 'shion', 'doctrine'
+]);
+
+Promise.resolve(FALLBACK_HEROES).then(heroes => { allHeroes = heroes; document.getElementById('count-all').innerText = heroes.length; createHeroGrid(heroes); const hashKey = window.location.hash.replace('#', '').toLowerCase(); const initialHero = heroes.find(h => h.key === hashKey || h.name.toLowerCase() === hashKey) || heroes.find(h => h.key === 'hazard') || heroes[0]; if (initialHero) showHeroDetails(initialHero); });
+
+function matchesFilters(hero) {
+    if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        const matchName = hero.name.toLowerCase().includes(q);
+        const matchRole = hero.role.toLowerCase().includes(q);
+        const matchSub = (hero.subrole || '').toLowerCase().includes(q);
+        if (!matchName && !matchRole && !matchSub) return false;
+    }
+
+    if (currentFilter === 'all') return true;
+    if (currentFilter === 'new2026') return NEW_2026_KEYS.has(hero.key);
+    if (currentFilter === 'S') return hero.tier === 'S';
+    return (hero.playstyle || hero.role).includes(currentFilter);
+}
+
+function createHeroGrid(heroes) {
+    const tankGrid = document.getElementById('tank-grid');
+    const damageGrid = document.getElementById('damage-grid');
+    const supportGrid = document.getElementById('support-grid');
+
+    tankGrid.innerHTML = '';
+    damageGrid.innerHTML = '';
+    supportGrid.innerHTML = '';
+
+    let tankCount = 0;
+    let damageCount = 0;
+    let supportCount = 0;
+
+    heroes.forEach(hero => {
+        if (!matchesFilters(hero)) return;
+
+        const gridItem = document.createElement('button');
+        gridItem.type = 'button';
+        gridItem.className = 'grid-item';
+        gridItem.dataset.heroName = hero.name;
+        gridItem.title = `${hero.name} (${hero.role} · ${hero.subrole || ''})`;
+        if (selectedHero && selectedHero.name === hero.name) {
+            gridItem.classList.add('active');
+        }
+
+        gridItem.addEventListener('click', () => showHeroDetails(hero));
+
+        if (hero.tier) {
+            const tierBadge = document.createElement('span');
+            tierBadge.className = `tier-dot tier-${hero.tier}`;
+            tierBadge.innerText = hero.tier;
+            gridItem.appendChild(tierBadge);
+        }
+
+        
+
+        const img = document.createElement('img');
+        img.src = hero.grid_img;
+        img.alt = hero.name;
+        img.loading = 'lazy';
+        gridItem.appendChild(img);
+
+        const label = document.createElement('span');
+        label.className = 'grid-item-label';
+        label.innerText = hero.name;
+        gridItem.appendChild(label);
+
+        if (hero.role.includes('Tank')) {
+            tankGrid.appendChild(gridItem);
+            tankCount++;
+        } else if (hero.role.includes('Damage')) {
+            damageGrid.appendChild(gridItem);
+            damageCount++;
+        } else if (hero.role.includes('Support')) {
+            supportGrid.appendChild(gridItem);
+            supportCount++;
+        }
+    });
+
+    document.getElementById('tank-count').innerText = tankCount;
+    document.getElementById('damage-count').innerText = damageCount;
+    document.getElementById('support-count').innerText = supportCount;
+
+    updateGridHighlights();
+}
+
+function updateGridHighlights() {
+    if (!selectedHero) return;
+    const counterSet = new Set(selectedHero.counter_names || []);
+    const weaknessSet = new Set(selectedHero.weakness_names || []);
+
+    document.querySelectorAll('.grid-item').forEach(item => {
+        const name = item.dataset.heroName;
+        item.classList.toggle('active', name === selectedHero.name);
+        item.classList.toggle('is-countered', counterSet.has(name));
+        item.classList.toggle('is-threat', weaknessSet.has(name));
+    });
+}
+
+function findHeroByPortraitOrName(identifier) {
+    return allHeroes.find(h => h.name === identifier || h.portrait_img === identifier || h.grid_img === identifier);
+}
+
+function renderMatchupChips(containerId, namesList, fallbackImgList) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    container.innerHTML = '';
+
+    const items = (namesList && namesList.length > 0) ? namesList : (fallbackImgList || []);
+
+    items.forEach(item => {
+        const targetHero = findHeroByPortraitOrName(item);
+        const chip = document.createElement('div');
+        chip.className = 'matchup-chip';
+
+        const img = document.createElement('img');
+        img.src = targetHero ? targetHero.grid_img : item;
+        img.alt = targetHero ? targetHero.name : 'Hero';
+        chip.appendChild(img);
+
+        const info = document.createElement('div');
+        info.className = 'matchup-chip-info';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'matchup-chip-name';
+        nameSpan.innerText = targetHero ? targetHero.name : 'Hero';
+        info.appendChild(nameSpan);
+
+        const roleSpan = document.createElement('span');
+        roleSpan.className = 'matchup-chip-role';
+        roleSpan.innerText = targetHero ? `${targetHero.playstyle} · ${targetHero.base_role}` : '';
+        info.appendChild(roleSpan);
+
+        chip.appendChild(info);
+
+        if (targetHero) {
+            chip.addEventListener('click', () => {
+                showHeroDetails(targetHero);
+            });
+        }
+
+        container.appendChild(chip);
+    });
+}
+
+function showHeroDetails(hero) {
+    selectedHero = hero;
+
+    document.getElementById('hero-name').innerText = hero.name;
+    document.getElementById('hero-role').innerText = hero.role;
+
+    const subroleEl = document.getElementById('hero-subrole');
+    if (subroleEl) {
+        subroleEl.innerText = hero.subrole || 'Specialist';
+    }
+
+    const tierEl = document.getElementById('hero-tier');
+    if (tierEl) {
+        tierEl.innerText = `${hero.tier || 'A'} TIER`;
+    }
+
+    const heroImg = document.getElementById('hero-img');
+    heroImg.src = hero.portrait_img;
+    heroImg.alt = hero.name;
+    heroImg.style.display = 'block';
+
+    const tipEl = document.getElementById('hero-tip');
+    if (tipEl) {
+        tipEl.innerText = hero.tip || '';
+    }
+
+    const diffContainer = document.getElementById('hero-difficulty');
+    if (diffContainer) {
+        const diff = hero.difficulty || 2;
+        diffContainer.innerHTML = [1, 2, 3]
+            .map(level => `<span class="bar ${level <= diff ? 'active' : ''}"></span>`)
+            .join('');
+    }
+
+    renderMatchupChips('hero-counters', hero.counter_names, hero.counters);
+    renderMatchupChips('hero-weaknesses', hero.weakness_names, hero.weaknesses);
+    renderMatchupChips('hero-synergies', hero.synergies, []);
+
+    const sendBtn = document.getElementById('send-to-team-btn');
+    if (sendBtn) {
+        sendBtn.href = `team.html?enemy=${encodeURIComponent(hero.name)}`;
+    }
+
+    updateGridHighlights();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('hero-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.trim();
+            createHeroGrid(allHeroes);
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== searchInput) {
+            e.preventDefault();
+            searchInput && searchInput.focus();
+        } else if (e.key === 'Escape' && document.activeElement === searchInput) {
+            searchInput.value = '';
+            searchQuery = '';
+            searchInput.blur();
+            createHeroGrid(allHeroes);
+        }
+    });
+
+    const filterBtns = document.querySelectorAll('#playstyle-filters .filter-chip');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.dataset.filter;
+            createHeroGrid(allHeroes);
+        });
+    });
+});
